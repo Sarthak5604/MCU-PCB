@@ -1,1 +1,16 @@
+Tinkercad link : https://www.tinkercad.com/things/jVHQy8pCQuV-fabulous-borwo?sharecode=T6-CU_gGEaUoaNb0buYsbGXwREfjDn3RHUISgrEymEk
 
+//CODE
+#include <Servo.h>
+Servo servo;
+
+void setup(){
+  Serial.begin(9600);
+  servo.attach(9);
+}
+
+void loop(){
+  int signal = analogRead(A0);
+  int angle = map(signal,0,1023,0,180);
+  servo.write(angle);
+}
